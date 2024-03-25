@@ -65,7 +65,7 @@ class States extends Colors {
 }
 
 class Constants {
-    static IPA_FETCH_LINK = "https://qtpc.tech/Discord_192.0_49246.ipa";
+    static IPA_FETCH_LINK = "https://qtpc.tech/Discord_191.0_47806.ipa";
 }
 
 export { Shell, Colors, Divider, States, Constants };
