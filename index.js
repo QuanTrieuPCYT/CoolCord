@@ -235,7 +235,7 @@ const main = async () => {
     const name = "Rosiecord";
     await Shell.write(`${S.PENDING}${M.CYAN} Replacing Discord's Name To ${M.PINK}\"${name}\".${M.ENDC}\r`);
     await Shell.runSilently(`plutil -replace CFBundleName -string "${name}" ${MAIN_PLIST} & wait $!`);
-    await Shell.runSilently(`plutil -replace CFBundleDisplayName -string "Rosiecord" ${MAIN_PLIST} & wait $!`, (stderr) => {
+    await Shell.runSilently(`plutil -replace CFBundleDisplayName -string "CoolCord" ${MAIN_PLIST} & wait $!`, (stderr) => {
         Shell.write(stderr
             ? `${S.FAILURE} An error occurred while Replacing ${M.PINK}\"Discord's Name\".${M.ENDC}\n`
             : `${S.SUCCESS} Successfully Replaced ${M.PINK}\"Discord's Name\"${M.GREEN} to ${M.PINK}\"${name}\".${M.ENDC}\n`);
@@ -267,9 +267,9 @@ const main = async () => {
             ? `${S.FAILURE} An error occurred while Enabling ${M.PINK}\"UISupportsDocumentBrowser\"${M.RED} and ${M.PINK}\"UIFileSharingEnabled\"${M.RED}.${M.ENDC}\n`
             : `${S.SUCCESS} Successfully Enabled ${M.PINK}\"UISupportsDocumentBrowser\"${M.GREEN} and ${M.PINK}\"UIFileSharingEnabled\"${M.GREEN}.${M.ENDC}\n`);
     });
-    if (process.argv[2] == "k2genmity") {
+    if (true) { // I don't care. bundling this in every releases.
         await Shell.write(`${S.PENDING}${M.CYAN} Modifying ${M.PINK}\"NSFaceIDUsageDescription\"${M.CYAN} and adding ${M.PINK}\"K2genmity\"${M.CYAN}.${M.ENDC}\r`);
-        await Shell.run(`plutil -replace NSFaceIDUsageDescription -string "K2genmity" ${MAIN_PLIST} & wait $!`, (stderr) => {
+        await Shell.run(`plutil -replace NSFaceIDUsageDescription -string "Face ID and Touch ID authentication on CoolCord with supported plugins" ${MAIN_PLIST} & wait $!`, (stderr) => {
             Shell.write(stderr
                 ? `${S.FAILURE} An error occurred while modifying ${M.PINK}\"NSFaceIDUsageDescription\"${M.RED}.${M.ENDC}\n`
                 : `${S.SUCCESS} Successfully modified ${M.PINK}\"NSFaceIDUsageDescription\"${M.GREEN} and added ${M.PINK}\"K2genmity\"${M.GREEN}.${M.ENDC}\n`);
