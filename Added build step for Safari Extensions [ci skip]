@@ -230,9 +230,14 @@ const main = async () => {
             ? `${S.FAILURE} An error occurred while unzipping ${M.PINK}\"${IPA_DIR}\".${M.ENDC}\n`
             : `${S.SUCCESS} Successfully unzipped ${M.PINK}\"${IPA_DIR}\"${M.GREEN} into ${M.PINK}\"./Payload\".${M.ENDC}\n`);
     });
+    await Shell.runSilently(`mv SafariExts/*.appex ./Payload/Discord.app/PlugIns/ & wait $!`, (stderr) => {
+        Shell.write(stderr
+            ? `${S.FAILURE} An error occurred while copying Safari Extensions to ${M.PINK}\"${IPA_DIR}\".${M.ENDC}\n`
+            : `${S.SUCCESS} Successfully copied Safari Extensions ${M.PINK}\"${IPA_DIR}\"${M.GREEN} into ${M.PINK}\"./Payload/Discord.app/PlugIns\".${M.ENDC}\n`);
+    });
     await D.logDivider();
     const MAIN_PLIST = `Payload/Discord.app/Info.plist`;
-    const name = "Rosiecord";
+    const name = "CoolCord";
     await Shell.write(`${S.PENDING}${M.CYAN} Replacing Discord's Name To ${M.PINK}\"${name}\".${M.ENDC}\r`);
     await Shell.runSilently(`plutil -replace CFBundleName -string "${name}" ${MAIN_PLIST} & wait $!`);
     await Shell.runSilently(`plutil -replace CFBundleDisplayName -string "CoolCord" ${MAIN_PLIST} & wait $!`, (stderr) => {
