@@ -119,6 +119,7 @@ const EntryPoint = async (index, ipaName) => {
             const M = new Main('Tweak', 'Required Tweaks');
             await M.Main(async () => {
                 await new Inject("Tweak", "all Required Tweaks", true, 'ls Patches/Required').run(M, async (ipaName, patchName) => {
+                    await Shell.run(`Azule/azule -R -v & wait $!`);
                     await Shell.run(`Azule/azule -U -i Dist/${ipaName}.ipa -o Dist -f $PWD/Patches/Required/${patchName} -v & wait $!`);
                     await Shell.run(`mv Dist/${ipaName}+${patchName}.ipa Dist/${ipaName}.ipa`);
                 });
