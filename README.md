@@ -3,6 +3,7 @@
 Modified for my personal use
 
 ## What changed?
+* Properly decrypted IPA (main-selling point).
 * I stay on older versions to avoid breaking changes.
 * Included OpenDiscordSafariExtension as a workaround for sideloaded instances of CoolCord.
 * Bundled OLEDCord tweak for default dark mode.
