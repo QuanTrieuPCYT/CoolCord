@@ -2,7 +2,7 @@
 * -~-~-~ Main Rosiecord Patch Script -~-~-~
 * Build to Patch Enmity, Icons, Fonts, and Other Tweaks into the Base Discord IPA.
 * Created by Rosie "Acquite" on Thursday 22nd December 2022.
-* Last updated by Rosie "Acquite" on Thursday 6th July 2023.
+* Last updated by QuanTrieuPCYT "cutiepc" on Saturday 30th March 2024.
 * Required Dependencies: plutil, local-dirs[Fonts, Packs, Icons, Patches{Required, Optional}], Azule, Theos, NodeJS (run `npm i`)
 */
 import fs from 'fs';
