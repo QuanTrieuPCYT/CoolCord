@@ -29,6 +29,6 @@ jobs:
         with:
           repo_token: "${{ secrets.GITHUB_TOKEN }}"
           prerelease: false
-          automatic_release_tag: coolcord_${{ steps.version.outputs.__DISCORD_VERSION }}_non_oled
+          automatic_release_tag: coolcord_${{ steps.version.outputs.__DISCORD_VERSION }}_non_blocked
           title: CoolCord ${{ steps.version.outputs.__DISCORD_VERSION }} (non-OLED)
           files: Dist/*.ipa
